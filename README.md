@@ -1,33 +1,45 @@
-This is a [Plasmo extension](https://docs.plasmo.com/) project bootstrapped with [`plasmo init`](https://www.npmjs.com/package/plasmo).
+# BlockTwitterer
 
-## Getting Started
+BlockTwittererは、Twitter（X）上で特定のキーワードをツイートしたユーザーを自動的にブロックするChrome拡張機能です。Plasmoフレームワークを用いて開発されています。
 
-First, run the development server:
+## 主な機能
+
+- 指定したキーワードを含むツイートをしたユーザーを自動的にブロック
+
+## ディレクトリ構成
+
+- `popup/` … 拡張機能のポップアップUI
+- `options/` … オプション（設定）ページ
+- `content/` … Twitterページ上で動作するスクリプト
+- `README.md` … このファイル
+
+## 開発環境構築
+
+1. 依存パッケージのインストール
+
+```bash
+pnpm install
+```
+
+2. 開発サーバーの起動
 
 ```bash
 pnpm dev
-# or
-npm run dev
 ```
 
-Open your browser and load the appropriate development build. For example, if you are developing for the chrome browser, using manifest v3, use: `build/chrome-mv3-dev`.
+3. Chromeで開発用ビルドを読み込む
 
-You can start editing the popup by modifying `popup.tsx`. It should auto-update as you make changes. To add an options page, simply add a `options.tsx` file to the root of the project, with a react component default exported. Likewise to add a content page, add a `content.ts` file to the root of the project, importing some module and do some logic, then reload the extension on your browser.
+例: Chrome + Manifest v3の場合 → `build/chrome-mv3-dev` ディレクトリを拡張機能として読み込む
 
-For further guidance, [visit our Documentation](https://docs.plasmo.com/)
-
-## Making production build
-
-Run the following:
+## 本番ビルド
 
 ```bash
 pnpm build
-# or
-npm run build
 ```
 
-This should create a production bundle for your extension, ready to be zipped and published to the stores.
+`build/` ディレクトリに本番用バンドルが生成されます。
 
-## Submit to the webstores
+## 参考リンク
 
-The easiest way to deploy your Plasmo extension is to use the built-in [bpp](https://bpp.browser.market) GitHub action. Prior to using this action however, make sure to build your extension and upload the first version to the store to establish the basic credentials. Then, simply follow [this setup instruction](https://docs.plasmo.com/framework/workflows/submit) and you should be on your way for automated submission!
+- [Plasmo公式ドキュメント](https://docs.plasmo.com/)
+- [Chrome拡張公式ドキュメント](https://developer.chrome.com/docs/extensions/)
